@@ -1,0 +1,62 @@
+<h3 class="ms-5 p-3 text-center">Vols Management</h3>
+<div class="p-5">
+  <form class="form" (ngSubmit) = "ngSubmit()" name="registerForm" novalidate enctype="multipart/form-data">
+    <label>dateDepart</label>
+    <input type="date" class="form-control w-50 mt-2" placeholder="dateDepart"  [(ngModel)] = "vol.dateDepart" name="dateDepart">
+    <input type="datetime" class="form-control w-50 mt-2" placeholder="heureDepart"  [(ngModel)] = "vol.heureDepart" name="heureDepart">
+    <label>dateArrive</label>
+    <input type="date" class="form-control w-50 mt-2" placeholder="dateArrive"  [(ngModel)] = "vol.dateArrive" name="dateArrive">
+    <input type="datetime" class="form-control w-50 mt-2" placeholder="heureArrive"  [(ngModel)] = "vol.heureArrive" name="heureArrive">
+    <input type="text" class="form-control w-50 mt-2" placeholder="avion"  [(ngModel)] = "vol.avion" name="avion">
+    <input type="number" class="form-control w-50 mt-2" placeholder="prix"  [(ngModel)] = "vol.prix" name="prix">
+    <input type="number" class="form-control w-50 mt-2" placeholder="etat"  [(ngModel)] = "vol.etat" name="etat" min="0" max="1">
+    <input type="number" class="form-control w-50 mt-2" placeholder="Nombre Place"  [(ngModel)] = "vol.nbrePlace" name="nbrePlace">
+    <input type="number" class="form-control w-50 mt-2" placeholder="Nombre Place Restant"  [(ngModel)] = "vol.nbrePlaceRestant" name="nbrePlaceRestant">
+    <input type="text" class="form-control w-50 mt-2" placeholder="Ville Depart"  [(ngModel)] = "vol.villeDepart" name="villeDepart">
+    <input type="text" class="form-control w-50 mt-2" placeholder="Ville Arrive"  [(ngModel)] = "vol.villeArrive" name="villeArrive">
+    <button type="submit" class="btn btn-outline-success mt-3">Add</button>
+
+  </form>
+</div>
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Date Depart</th>
+      <th scope="col">Heure Depart</th>
+      <th scope="col">Date Arrive</th>
+      <th scope="col">Heure Arrive</th>
+      <th scope="col">Avion</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Etat</th>
+      <th scope="col">Nombre place</th>
+      <th scope="col">Nombre place restant</th>
+      <th scope="col">Ville Depart</th>
+      <th scope="col">Ville Arrive</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let vol of vols">
+      <td>{{vol.numVol}}</td>
+      <td>{{vol.dateDepart}}</td>
+      <td>{{vol.heureDepart}}</td>
+      <td>{{vol.dateArrive}}</td>
+      <td>{{vol.heureArrive}}</td>
+      <td>{{vol.avion}}</td>
+      <td>{{vol.prix}}</td>
+      <td>{{vol.etat}}</td>
+      <td>{{vol.nbrePlace}}</td>
+      <td>{{vol.nbrePlaceRestant}}</td>
+      <td>{{vol.villeDepart}}</td>
+      <td>{{vol.villeArrive}}</td>
+      <td>
+<button class="btn btn-outline-danger me-2" (click)="deleteVol(vol.numVol)">Delete</button>
+<button class="btn btn-outline-secondary">Update</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

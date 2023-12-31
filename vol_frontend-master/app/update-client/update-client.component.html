@@ -1,0 +1,15 @@
+<h3 class="ms-5 p-3 text-center">Clients Management</h3>
+<div class="p-5">
+  <form class="form" name="registerForm" (ngSubmit) = "onSubmit()" novalidate enctype="multipart/form-data">
+    <input type="text" class="form-control w-50 mt-2" placeholder="Login"  [(ngModel)] = "client.loginClt" name="loginClt">
+    <input type="text" class="form-control w-50 mt-2" placeholder="Cin"  [(ngModel)] = "client.cinClt" name="cinClt">
+    <input type="text" class="form-control w-50 mt-2" placeholder="Nom"  [(ngModel)] = "client.nomClt" name="nomClt">
+    <input type="text" class="form-control w-50 mt-2" placeholder="Prenom"  [(ngModel)] = "client.prenomClt" name="prenomClt">
+    <input type="number" class="form-control w-50 mt-2" placeholder="Age"  [(ngModel)] = "client.ageClt" name="ageClt">
+    <input type="text" class="form-control w-50 mt-2" placeholder="Adresse"  [(ngModel)] = "client.adresseClt" name="adresseClt">
+    <input type="text" class="form-control w-50 mt-2" placeholder="Numero"  [(ngModel)] = "client.numTel" name="numTel">
+    <input type="email" class="form-control w-50 mt-2" placeholder="Email"  [(ngModel)] = "client.mailClt" name="mailClt">
+    <input type="password" class="form-control w-50 mt-2" placeholder="Password" [(ngModel)] = "client.passwordClt" name="passwordClt">
+    <button type="submit" class="btn btn-outline-secondary mt-3">Update</button>
+  </form>
+</div>

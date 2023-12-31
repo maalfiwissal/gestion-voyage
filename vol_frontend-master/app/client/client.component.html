@@ -1,0 +1,47 @@
+<h3 class="ms-5 p-3 text-center">Clients Management</h3>
+<div class="p-5">
+  <form class="form" (ngSubmit) = "ngSubmit()" name="registerForm" novalidate enctype="multipart/form-data">
+    <input type="text" class="form-control w-50 mt-2" placeholder="Login"  [(ngModel)] = "client.loginClt" name="loginClt">
+    <input type="text" class="form-control w-50 mt-2" placeholder="Cin"  [(ngModel)] = "client.cinClt" name="cinClt">
+    <input type="text" class="form-control w-50 mt-2" placeholder="Nom"  [(ngModel)] = "client.nomClt" name="nomClt">
+    <input type="text" class="form-control w-50 mt-2" placeholder="Prenom"  [(ngModel)] = "client.prenomClt" name="prenomClt">
+    <input type="number" class="form-control w-50 mt-2" placeholder="Age"  [(ngModel)] = "client.ageClt" name="ageClt">
+    <input type="text" class="form-control w-50 mt-2" placeholder="Adresse"  [(ngModel)] = "client.adresseClt" name="adresseClt">
+    <input type="text" class="form-control w-50 mt-2" placeholder="Numero"  [(ngModel)] = "client.numTel" name="numTel">
+    <input type="email" class="form-control w-50 mt-2" placeholder="Email"  [(ngModel)] = "client.mailClt" name="mailClt">
+    <input type="password" class="form-control w-50 mt-2" placeholder="Password" [(ngModel)] = "client.passwordClt" name="passwordClt">
+    <button type="submit" class="btn btn-outline-success mt-3">Add</button>
+
+  </form>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Age</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Numero</th>
+      <th scope="col">Email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let client of clients">
+      <td>{{client.idClt}}</td>
+      <td>{{client.nomClt}}</td>
+      <td>{{client.prenomClt}}</td>
+      <td>{{client.ageClt}}</td>
+      <td>{{client.adresseClt}}</td>
+      <td>{{client.numTel}}</td>
+      <td>{{client.mailClt}}</td>
+      <td>
+<button class="btn btn-outline-danger me-2" (click) = "deleteClient(client.idClt)">Delete</button>
+<button class="btn btn-outline-secondary" (click) = "updateClient(client.idClt)">Update</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
